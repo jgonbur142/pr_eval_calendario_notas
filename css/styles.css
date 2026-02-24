@@ -1,0 +1,28 @@
+body {
+  font-family: system-ui, Arial, sans-serif;
+  margin: 20px;
+  max-width: 900px;
+}
+
+section {
+  text-align: center;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:1.5em;
+}
+
+#cuadroMes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:1.5em;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+
+
+}

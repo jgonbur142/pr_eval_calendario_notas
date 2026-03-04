@@ -3,25 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calendario</title>
+  <title>Calendario-Mes</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <header>
-    <h1></h1>
-    <p></p>
+  <header class="headerMes">
+    <a href="index.html" class="btnVolver">Volver al calendario</a>
+    <h1 id="nombreMes">Mes</h1>
   </header>
 
   <main>
-    <section>
-      
+    <section class="seccionNotas">
+      <input type="text" id="nuevaNota" placeholder="Tarea...">
+      <button id="addNota">Añadir nota</button>
     </section>
+
+    <ul id="listaNotas">
+      <li>
+        <span>Nota x: (contenido)</span>
+        <button class="btnBorrar">Borrar</button>
+      </li>
+    </ul>
+
   </main>
-
-
-  <footer>
-  </footer>
 
   <script src="js/app_mes.js"></script>
 </body>

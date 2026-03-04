@@ -1,28 +1,162 @@
 body {
   font-family: system-ui, Arial, sans-serif;
-  margin: 20px;
-  max-width: 900px;
+  margin: 0px;
+  padding: .2em;
+  background-color: #e2e2e2;
+  color: black;
 }
 
-section {
+.mainHeader{
   text-align: center;
-  width: 100%;
-  border: 1px solid #ddd;
-  padding: 12px;
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap:1.5em;
+  margin-bottom: .4em;
 }
 
-#cuadroMes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:1.5em;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+/*
+    --------------------
+    cajas del calendario
+    --------------------
+*/
+.calendarioGrid{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 20px;
+  max-width:1100px ;
+  margin: 0 auto;
+}
 
+.cuadroMes{
+  text-decoration: none;
+  color: inherit;
+  padding: .2em;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 1.2em;
+}
 
+.cuadroMes:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
+.cuadroMes h2{
+  margin-bottom: .1em;
+  font-size: 1.2em;
+}
+
+.tareasInfo{
+  font-size: .8em;
+  opacity: .8;
+}
+
+/*según si el mes tiene alguna nota o no, la clase cambiará usando js*/
+.conNotas{
+  background-color: #d4edda;
+  border: 2px solid #28a745;
+}
+
+.sinNotas{
+  background-color: #e9ecef;
+}
+
+/*
+    -------
+    Botones
+    -------
+*/
+
+.accionesBotones{
+  margin-top: 1.5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+button{
+  padding: 1.2em 1.5em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity .2s;
+}
+
+button:hover{
+  opacity: .8;
+}
+
+/*
+    -------------------
+    Estilos de mes.html
+    -------------------
+*/
+
+.headerMes{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.2em 1.5em;
+  box-shadow: 0 2px 10px rgba(0,0,0,.5);
+  margin-bottom: 1em;
+}
+
+.headerMes h1{
+  grid-column: 2;
+  margin: 0;
+  font-size: 3em;
+  text-transform: capitalize;
+}
+
+.btnVolver{
+  grid-column: 1;
+  justify-self: start;
+  text-decoration: none;
+  color: #4a90e2;
+  font-weight: bold;
+  padding: .8em 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-weight: 1.6em;
+  font-size: .9em;
+  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+}
+
+.seccionNotas{
+  display: flex;
+  gap: .1em;
+  margin-bottom: .3em;
+}
+
+.seccionNotas input {
+  flex: 1;
+  padding: .1em;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+}
+
+.listaNotas {
+  background: white;
+  padding: .1em;
+  margin-bottom: .1em;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
+.btnBorrar{
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.2em;
+  cursor: pointer;
 }

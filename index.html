@@ -8,97 +8,70 @@
 </head>
 
 <body>
-  <header>
-    <h1>Calendario de notas:</h1>
-    <p></p>
+  <header class="mainHeader">
+    <h1>Año: <span id="currentYear">2026</span></h1>
+    <p>Clic en un mes para gestionar tareas</p>
   </header>
 
   <main>
-    <section>
-      <div id="cuadroMes">
-        <a href="mes.html">
+    <section class="calendarioGrid">
+        <a href="mes.html?mes=Enero" class="cuadroMes conNotas"> <!--mes.html?mes=Enero devuelve "Enero" como valor de mes al hacer clic-->
           <h2>Enero</h2>
-          <ul>
-            <li>Sin notas</li>
-          </ul>
+          <div class="tareasInfo">X tareas pendientes</div>
         </a>
-      </div>
-      <div id="cuadroMes">
-        <a href="mes.html">
+      <a href="mes.html?mes=Febrero" class="cuadroMes sinNotas">
           <h2>Febrero</h2>
-          <ul>
-            <li>Sin notas</li>
-          </ul>
+          <div class="tareasInfo">X tareas pendientes</div>
         </a>
-      </div>
-      <div id="cuadroMes">
-        <a href="mes.html">
+      <a href="mes.html?mes=Marzo" class="cuadroMes sinNotas">
           <h2>Marzo</h2>
-          <ul>
-            <li>Sin notas</li>
-          </ul>
+          <div class="tareasInfo">X tareas pendientes</div>
         </a>
-      </div>
-      <div id="cuadroMes">
-        <h2>Abril</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Mayo</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Junio</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Julio</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Agosto</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Septiembre</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Octubre</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Noviembre</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
-      <div id="cuadroMes">
-        <h2>Diciembre</h2>
-        <ul>
-          <li>Sin notas</li>
-        </ul>
-      </div>
+      <a href="mes.html?mes=Abril" class="cuadroMes sinNotas">
+          <h2>Abril</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Mayo" class="cuadroMes sinNotas">
+          <h2>Mayo</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Junio" class="cuadroMes sinNotas">
+          <h2>Junio</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Julio" class="cuadroMes sinNotas">
+          <h2>Julio</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Agosto" class="cuadroMes sinNotas">
+          <h2>Agosto</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Septiembre" class="cuadroMes sinNotas">
+          <h2>Septiembre</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Octubre" class="cuadroMes sinNotas">
+          <h2>Octubre</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Noviembre" class="cuadroMes sinNotas">
+          <h2>Noviembre</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
+      <a href="mes.html?mes=Diciembre" class="cuadroMes sinNotas">
+          <h2>Diciembre</h2>
+          <div class="tareasInfo">X tareas pendientes</div>
+        </a>
     </section>
+
+    <section class="accionesBotones">
+      <button id="btnLista">Listar Tareas</button>
+      <button id="btnLimpiar">Limpiar Calendario</button>
+    </section>
+
+    <div id="listarTareas"></div>
   </main>
-
-
-  <footer>
-  </footer>
 
   <script src="js/app_index.js"></script>
 </body>

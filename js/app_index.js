@@ -2,10 +2,6 @@ const btnLista = document.querySelector("#btnLista");
 const btnLimpiar = document.querySelector("#btnLimppiar");
 const lista = document.querySelector("#listarTareas");
 
-const arrayMeses = [
-    "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
-];
-
 btnLista.addEventListener("click",() =>{
     lista.innerHTML=`<h2>Lista de tareas:</h2>`
     let hayTarea = false;

@@ -15,14 +15,19 @@
 
   <main>
     <section class="seccionNotas">
-      <input type="text" id="nuevaNota" placeholder="Tarea...">
-      <button id="addNota">Añadir nota</button>
+      <form id="formularioNotas">
+        <div>
+          <input type="text" id="tituloNota" placeholder="Título de la nota"></br>
+          <textarea id="descNota" placeholder="Descripción de la nota"></textarea>
+        </div>
+        <button id="addNota">Añadir nota</button>
+      </form>
+      <div id="errorMensaje"></div>      
     </section>
 
   
     <section class="seccionResult">
       <ul id="listaNotas"></ul>
-      <button id="btnBorrarGeneral">Borrar</button>
     </section>
   
 

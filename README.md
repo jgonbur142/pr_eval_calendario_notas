@@ -16,41 +16,76 @@ El proyecto consta de la siguiente estructura:
 └── assets/
     └── (capturas)
 ```
-### index.html
+###  🔹 index.html
 En `index.html` tenemos una vista general del calendario, mostrando el año y los distintos meses. Podemos distinguir si un mes tiene notas o no por su color y por el texto que aparece debajo de cada mes, en su propio cuadro.
-(captura 1)
+
+<p align="center">
+  <img src="./assets/captura1_cuadrosMeses.png" alt="Captura 1" width="700">
+</p>
+
 
 También cuenta con dos botones, uno que dice "Listar Tareas" que se encarga de mostrar todas las notas que tengamos en los diferentes meses. Si no hay tareas, también lo especifica.
-(captura 2)
-(captura 3)
+
+<p align="center">
+  <img src="./assets/captura2_listarTareasSi.png" alt="Captura 2" width="700">
+</p>
+
+<p align="center">
+  <img src="./assets/captura3_listarTareasNo.png" alt="Captura 3" width="700">
+</p>
 
 El otro botón que tiene el index se trata de "Limpiar Calendario", cuya función es borrar todas las notas en todos los meses. Primero pregunta si estamos seguros de querer borrar todas las notas, y después las elimina.
-(captura 4)
-(captura 5)
+<p align="center">
+  <img src="./assets/captura4_confirmarBorrar.png" alt="Captura 4" width="700">
+</p>
+<p align="center">
+  <img src="./assets/captura5_Borrado.png" alt="Captura 5" width="700">
+</p>
 
 ---
 
-### mes.html
+###  🔹 mes.html
 Si nos encontramos en `index.html` y pulsamos en cualquiera de los meses, nos llevará a `mes.html`, de forma que si pulsamos, por ejemplo, en enero, nos llevará a `mes.html` con los datos de dicho mes.
-(captura 6)
+
+<p align="center">
+  <img src="./assets/captura6_mesGeneral.png" alt="Captura 6" width="700">
+</p>
 
 En esta página tenemos un formulario que sirve para introducir el título de la nota y su descripción, ambas obligatorias. Cuando pulsamos en "Añadir nota" se crea una lista debajo del formulario con los datos introducidos.
-(captura 7)
-(captura 8)
+
+<p align="center">
+  <img src="./assets/captura7_notaMesFormulario.png" alt="Captura 7" width="700">
+</p>
+
+<p align="center">
+  <img src="./assets/captura8_listaNota.png" alt="Captura 8" width="700">
+</p>
 
 A su vez, cuando tenemos una nota creada en un mes, aparecen dos botones nuevos. El botón "Editar" lleva la información de la nota al formulario y nos permite editarla y guardar los cambios, sustituyendo la información en la nota ya existente.
-(captura 9)
-(captura 10)
 
-El otro botón, "Eliminar", hace lo mismo que el botón elimnar de `index.html` solo que a nivel de esa nota individual. Pregunta por una confirmación y entonces dicha nota.
-(captura 11)
-(captura 12)
+<p align="center">
+  <img src="./assets/captura9_editandoNota.png" alt="Captura 9" width="700">
+</p>
+
+<p align="center">
+  <img src="./assets/captura10_guardarCambios.png" alt="Captura 10" width="700">
+</p>
+
+El otro botón, "Eliminar", hace lo mismo que el botón eliminar de `index.html` solo que a nivel de esa nota individual. Pregunta por una confirmación y entonces elimina dicha nota.
+
+<p align="center">
+  <img src="./assets/captura11_eliminandoNota.png" alt="Captura 11" width="700">
+</p>
+
+<p align="center">
+  <img src="./assets/captura12_notaEliminada.png" alt="Captura 12" width="700">
+</p>
 
 Por último, tenemos el botón "Volver al calendario" que nos lleva de vuelta a `index.html`.
 
 ---
 
-### app_mes.js
+###  🔹 app_mes.js
 Pasando ahora a javaScript, empezando por el relacionado a `mes.html`, explicaré las funciones utilizadas para la lógica de la web:
 
 ``` js
@@ -58,10 +93,16 @@ function cargarMes(mes){
     return arrayMes[mes];
 }
 ```
-* **cargarMes(mes)** se encarga de devolver el mes correspondiente al que hemos clicado desde `index.html`. Para ello, en el html del index, el enlace de cada mes está construidode la siguiente forma: `a href="mes.html?mes=0"` (enero) y después en `app_mes.js`
+* **cargarMes(mes)** se encarga de devolver el mes correspondiente al que hemos clicado desde `index.html`. Para ello, en el html del index, el enlace de cada mes está construido de la siguiente forma: `a href="mes.html?mes=0"` (enero) y después en `app_mes.js`
 uso las constantes `params` y `mesAhora` para identificar cada número y después utilizarlo para la posición en el array `arrayMes` y distinguir de qué mes en concreto estamos hablando.
-(captura 13)
-(cpatura 14)
+
+<p align="center">
+  <img src="./assets/captura13_constantesMes.png" alt="Captura 13" width="700">
+</p>
+
+<p align="center">
+  <img src="./assets/captura14_arrayMes.png" alt="Captura 14" width="700">
+</p>
 
 ``` js
 function cargarNotas(){
@@ -69,7 +110,7 @@ function cargarNotas(){
     return datos ? JSON.parse(datos) : [];
 }
 ```
-* **cargarNotas()** se encarga de consultar el localStorage y devolver los datos si los hubiera y si no, un array vacío. Utiliza la constante `KEY_CALENDAR` con la clave utilziada para guardar datos en localStorage.
+* **cargarNotas()** se encarga de consultar el localStorage y devolver los datos si los hubiera y si no, un array vacío. Utiliza la constante `KEY_CALENDAR` con la clave utilizada para guardar datos en localStorage.
 
 ``` js
 function guardarNotas(notas){
@@ -198,12 +239,12 @@ window.editarNota = function(id){
 }
 ```
 * Similar con la anterior, esta función se encarga de comparar los id de la nota que queremos editar con todos los id de las notas en `allNotas` y cuando coincide, la cambia. Aquí es donde juego con `editando` y su valor nulo. En mitad del proceso de editar la nota, cuando
-sustituyo los valores del título y la descripción, también cambio el valor de `editando` para que no sea nulo y luego entre en el *if*  de `fromNota` (`if (editando !== null)`), para evitar lo que dije antes, que no se cree una nota nueva cada vez, sino que se edite la que
+sustituyo los valores del título y la descripción, también cambio el valor de `editando` para que no sea nulo y luego entre en el *if*  de `formNota` (`if (editando !== null)`), para evitar lo que dije antes, que no se cree una nota nueva cada vez, sino que se edite la que
 ya existe.
 
 ---
 
-### app_index.js
+###  🔹 app_index.js
 Para terminar, comentaré por encima también el contenido del javaScript que utiliza `index.html`
 
 ``` js
@@ -290,7 +331,7 @@ también el número de tareas pendientes.
 
 ---
 
-### styles.css
+###  🔹 styles.css
 El css lo he estructurado en varias partes, algunas cosas de forma general (body, header, *), luego hago el estilo de las cajas del calendario, los botones, los estilos específicos para cosas de `mes.html` (como el formulario) y al final una pequeña parte para adaptar
 las dimensiones a pantallas más pequeñas pensando en móviles y tablets, para hacer más cómodo el uso de la web en estos dispositivos.
 
